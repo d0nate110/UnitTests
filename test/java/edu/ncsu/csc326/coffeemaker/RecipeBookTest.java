@@ -181,6 +181,41 @@ public class RecipeBookTest {
       recipeBook.editRecipe(0, null);
     });
     System.out.println(exception);
-
   }
+
+  // ********************************************************************
+  // ********************* SECOND TASK **********************************
+  // ********************************************************************
+
+  //First Condition: true/false - Second Condition: false - Third Condition: true - Forth Condition: true/false - Fifth Condition: true
+  @Test
+  public void addRecipeFirstBranch(){
+    recipeBook = new RecipeBook();
+    assertTrue(recipeBook.addRecipe(firstRecipe));
+    System.out.println(Arrays.toString(recipeBook.getRecipes()));
+  }
+
+  //First Condition: true/false - Second Condition: true - Third Condition: false
+  @Test
+  public void addRecipeSecondBranch(){
+    recipeBook = new RecipeBook();
+    recipeBook.addRecipe(firstRecipe);
+    assertFalse(recipeBook.addRecipe(firstRecipe));
+    System.out.println(Arrays.toString(recipeBook.getRecipes()));
+  }
+
+  //First Condition: true/false - Second Condition: false - Third Condition: true - Forth Condition: true/false - Fifth Condition: false
+  @Test
+  public void addRecipeThirdBranch(){
+    recipeBook = new RecipeBook();
+
+    recipeBook.addRecipe(firstRecipe);
+    recipeBook.addRecipe(secondRecipe);
+    recipeBook.addRecipe(thirdRecipe);
+    recipeBook.addRecipe(fourthRecipe);
+
+    assertFalse(recipeBook.addRecipe(fifthRecipe));
+    System.out.println(Arrays.toString(recipeBook.getRecipes()));
+  }
+
 }

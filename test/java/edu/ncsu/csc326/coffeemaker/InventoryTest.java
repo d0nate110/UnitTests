@@ -384,9 +384,9 @@ public class InventoryTest {
     System.out.println(nullPointerException.getMessage());
   }
 
-  //Full branch coverage
+  //First Condition: False
   @Test
-  public void testAddSugar() {
+  public void testAddSugarFirstBranch() {
     try {
       inventory = new Inventory();
 
@@ -396,13 +396,34 @@ public class InventoryTest {
       });
       System.out.println(inventoryException.toString());
 
-      //First Condition: true - SecondCondition: True
+    } catch (Exception e) {
+      fail("Exception thrown");
+    }
+  }
+  // ********************************************************************
+  // ********************* SECOND TASK **********************************
+  // ********************************************************************
+
+  //First Condition: true - SecondCondition: True
+  @Test
+  public void testAddSugarSecondBranch() {
+    try {
+      inventory = new Inventory();
+
       InventoryException inventoryException1 = assertThrows(InventoryException.class, () -> {
         inventory.addSugar("-5");
       });
       System.out.println(inventoryException1.toString());
 
-      //First Condition: true - SecondCondition: False
+    } catch (Exception e) {
+      fail("Exception thrown");
+    }
+  }
+
+  //First Condition: true - SecondCondition: False
+  @Test
+  public void testAddSugarThirdBranch() {
+    try {
       inventory.addSugar("5");
       assertEquals(20, inventory.getSugar());
 
@@ -410,4 +431,5 @@ public class InventoryTest {
       fail("Exception thrown");
     }
   }
+
 }
