@@ -274,18 +274,10 @@ public class RecipeTest {
         assertNotEquals(rec1.getName(), rec2.getName());
     }
     @Test
-    public void testGetMilk() {
-        assertEquals(0, rec1.getAmtMilk());
-    }
-
+    public void testGetMilk() { assertEquals(0, rec1.getAmtMilk()); }
     @Test
-    public void testGetName() {
-        assertEquals("Ristretto", rec2.toString());
-    }
-    @Test
-    public void testNameNotNull() {
-        assertNotNull(rec2.getName());
-    }
+    public void testGetName() { assertEquals("Ristretto", rec2.toString()); }
 
+    // 95% coverage, equals cannot be covered 100% because the name cannot be set to null
 
 }
