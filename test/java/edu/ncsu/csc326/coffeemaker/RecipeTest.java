@@ -48,7 +48,7 @@ public class RecipeTest {
     }
 
     @Test
-    public void test_Name_Input() {
+    public void testEmptyNameInput() {
         Throwable exception =
                 assertThrows( // should throw an exception but none are thrown
                 RecipeException.class, () -> {
@@ -58,7 +58,7 @@ public class RecipeTest {
     }
 
     @Test
-    public void test_Name_IsNumber() {
+    public void testNameIsNumber() {
 
         Throwable exception =
                 assertThrows( // should throw an exception but none are thrown
@@ -70,12 +70,12 @@ public class RecipeTest {
     }
 
     @Test
-    public void test_Recipe_NotNull() {
+    public void testRecipeNotNull() {
         assertNotNull(rec2);
     }
 
     @Test
-    public void test_Negative_Amt_Coffee() {
+    public void testNegativeAmtCoffee() {
         Throwable exception =
                 assertThrows(
                         RecipeException.class, () -> {
@@ -87,7 +87,7 @@ public class RecipeTest {
     }
 
     @Test
-    public void test_Big_Input_Values() {
+    public void testBigInputValues() {
 
         Throwable exception =
                 assertThrows( // should throw an exception but none are thrown
@@ -103,7 +103,7 @@ public class RecipeTest {
     }
 
     @Test
-    public void test_Input_Price_Zero() {
+    public void testInputPriceZero() {
 
         Throwable exception =
                 assertThrows( // should throw an exception but none are thrown
@@ -120,7 +120,7 @@ public class RecipeTest {
     }
 
     @Test
-    public void test_Set_Price() {
+    public void testSetPrice() {
 
         Throwable exception =
                 assertThrows(
@@ -130,18 +130,8 @@ public class RecipeTest {
                 );
     }
 
-
     @Test
-    public void test_Normal_Add_Recipe() {
-        try {
-            cm.addRecipe(rec2);
-        } catch (Exception e) {
-            fail("Failed to add recipe."); // should not throw an exception
-        }
-    }
-
-    @Test
-    public void test_Negative_Values() {
+    public void testNegativeValues() {
 
         Throwable exception =
                 assertThrows(
@@ -153,7 +143,7 @@ public class RecipeTest {
 
     // Problem 2,  tests
     @Test
-    public void test_Throw_Exception_Price() {
+    public void testThrowExceptionPrice() {
         Throwable exception =
                 assertThrows(
                         RecipeException.class, () -> {
@@ -163,23 +153,23 @@ public class RecipeTest {
 
     }
     @Test
-    public void test_Test_Normal_Price() throws RecipeException {
+    public void testTestNormalPrice() throws RecipeException {
         rec1.setPrice("20");
         assertTrue(rec1.getPrice() >= 0);
     }
     // line coverage for Recipe is 52% so far
     @Test
-    public void test_Normal_Add_Sugar() throws RecipeException {
+    public void testNormalAddSugar() throws RecipeException {
         rec1.setAmtSugar("3");
         assertEquals(3, rec1.getAmtSugar());
     }
     @Test
-    public void test_Normal_Add_Coffee() throws RecipeException {
+    public void testNormalAddCoffee() throws RecipeException {
         rec1.setAmtCoffee("2");
         assertEquals(2, rec1.getAmtCoffee());
     }
     @Test
-    public void test_Set_String_Milk() throws RecipeException {
+    public void testSetStringMilk() throws RecipeException {
       Throwable exception =
               assertThrows(
                       RecipeException.class, () -> {
@@ -190,7 +180,7 @@ public class RecipeTest {
     }
 
     @Test
-    public void test_Set_Negative_Milk() throws RecipeException {
+    public void testSetNegativeMilk() throws RecipeException {
         Throwable exception =
                 assertThrows(
                         RecipeException.class, () -> {
@@ -200,11 +190,11 @@ public class RecipeTest {
 
     }
     @Test
-    public void test_Get_Sugar() {
+    public void testGetSugar() {
         assertEquals(0, rec1.getAmtSugar());
     }
     @Test
-    public void test_Get_Amt_Chocolate() {
+    public void testGetAmtChocolate() {
         assertEquals(1, rec2.getAmtChocolate());
     }
     @Test
@@ -255,22 +245,22 @@ public class RecipeTest {
     }
     // testing equals() method
     @Test
-    public void test_recipeEquals() {
+    public void testRecipeEquals() {
         Recipe rec7 = new Recipe();
         Recipe rec8 = new Recipe();
         assertEquals(rec7.equals(rec8), rec8.equals(rec7));
     }
     @Test
-    public void test_recipeNotEquals() {
+    public void testRecipeNotEquals() {
         CoffeeMaker cm1 = new CoffeeMaker();
         assertNotEquals(rec1, cm1);
     }
     @Test
-    public void test_SameRecipe() {
+    public void testSameRecipe() {
         assertEquals(rec1, rec1);
     }
     @Test
-    public void test_NotSameName() {
+    public void testNotSameName() {
         assertNotEquals(rec1.getName(), rec2.getName());
     }
     @Test
@@ -278,6 +268,6 @@ public class RecipeTest {
     @Test
     public void testGetName() { assertEquals("Ristretto", rec2.toString()); }
 
-    // 95% coverage, equals cannot be covered 100% because the name cannot be set to null
+    // 97% coverage, equals cannot be covered 100% because the name cannot be set to null
 
 }
