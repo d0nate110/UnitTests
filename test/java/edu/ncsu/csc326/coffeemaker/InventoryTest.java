@@ -15,6 +15,10 @@ public class InventoryTest {
   private Recipe nullRecipe;
   private InventoryException inventoryException;
 
+  // ********************************************************************
+  // ********************* FIRST TASK **********************************
+  // ********************************************************************
+
   @Before
   public void setUp() throws Exception {
 
@@ -384,6 +388,10 @@ public class InventoryTest {
     System.out.println(nullPointerException.getMessage());
   }
 
+  // ********************************************************************
+  // ********************* SECOND TASK **********************************
+  // ********************************************************************
+
   //First Condition: False
   @Test
   public void testAddSugarFirstBranch() {
@@ -400,9 +408,6 @@ public class InventoryTest {
       fail("Exception thrown");
     }
   }
-  // ********************************************************************
-  // ********************* SECOND TASK **********************************
-  // ********************************************************************
 
   //First Condition: true - SecondCondition: True
   @Test
@@ -424,6 +429,7 @@ public class InventoryTest {
   @Test
   public void testAddSugarThirdBranch() {
     try {
+      inventory = new Inventory();
       inventory.addSugar("5");
       assertEquals(20, inventory.getSugar());
 
