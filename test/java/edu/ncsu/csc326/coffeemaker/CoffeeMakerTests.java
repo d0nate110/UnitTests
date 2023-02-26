@@ -52,6 +52,10 @@ public class CoffeeMakerTests {
         recipe4.setPrice("11");
     }
 
+    // ********************************************************************
+    // ********************* First TASK ***********************************
+    // ********************************************************************
+
     @Test
     public void CoffeeMakerConstructor(){
         String expected = "Coffee: 15\nMilk: 15\nSugar: 15\nChocolate: 15\n";
@@ -115,7 +119,7 @@ public class CoffeeMakerTests {
     }
 
     @Test
-    public void EditDeleteRecipeNormal() throws RecipeException {
+    public void EditRecipeNormal() throws RecipeException {
         try{
             coffeeMaker.addRecipe(recipe1);
             coffeeMaker.addRecipe(recipe2);
@@ -137,7 +141,7 @@ public class CoffeeMakerTests {
     }
 
     @Test
-    public void EditDeleteRecipeException() throws RecipeException {
+    public void EditRecipeException() throws RecipeException {
         try{
             Recipe newRecipe = new Recipe();
             newRecipe.setName("Flat White");
@@ -201,7 +205,7 @@ public class CoffeeMakerTests {
     }
 
     @Test
-    public void MakeCoffeeException() throws InventoryException {
+    public void MakeCoffeeExceptionSubcase1() throws InventoryException {
         try{
             coffeeMaker.addRecipe(recipe1);
             coffeeMaker.addRecipe(recipe2);
@@ -216,7 +220,7 @@ public class CoffeeMakerTests {
     }
 
     @Test
-    public void MakeCoffeeException2() throws InventoryException {
+    public void MakeCoffeeExceptionSubcase2() throws InventoryException {
         try{
             coffeeMaker.addRecipe(recipe1);
             coffeeMaker.addRecipe(recipe2);
@@ -231,7 +235,7 @@ public class CoffeeMakerTests {
     }
 
     @Test
-    public void MakeCoffeeException3() throws InventoryException {
+    public void MakeCoffeeExceptionSubcase3() throws InventoryException {
         try{
             coffeeMaker.addRecipe(recipe1);
             coffeeMaker.addRecipe(recipe2);
