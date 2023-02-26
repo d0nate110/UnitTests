@@ -387,11 +387,14 @@ public class InventoryTest {
 
     System.out.println(nullPointerException.getMessage());
   }
+  
+  //Gives 100% line coverage as specified in the report
 
   // ********************************************************************
   // ********************* SECOND TASK **********************************
   // ********************************************************************
 
+  //Input is not a number
   //First Condition: False
   @Test
   public void testAddSugarFirstBranch() {
@@ -409,6 +412,7 @@ public class InventoryTest {
     }
   }
 
+  //Input is not a positive number
   //First Condition: true - SecondCondition: True
   @Test
   public void testAddSugarSecondBranch() {
@@ -425,6 +429,7 @@ public class InventoryTest {
     }
   }
 
+  //Input is valid and the sugar gets added into the inventory
   //First Condition: true - SecondCondition: False
   @Test
   public void testAddSugarThirdBranch() {
@@ -437,6 +442,7 @@ public class InventoryTest {
       fail("Exception thrown");
     }
   }
-
-
+  
+  //100% Branch coverage as it is covering every possible path/branch in the diagram 
+  
 }
