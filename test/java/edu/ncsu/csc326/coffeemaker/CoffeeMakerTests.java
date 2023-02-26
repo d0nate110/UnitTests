@@ -163,7 +163,7 @@ public class CoffeeMakerTests {
     @Test
     public void AddInventoryException() throws InventoryException {
         Exception exception = assertThrows(InventoryException.class, () -> {
-            coffeeMaker.addInventory("-10", "5" , "10", "0");
+            coffeeMaker.addInventory("-10", "-5" , "-2", "0");
         });
 
         String expected = "Units of coffee must be a positive integer";
@@ -194,7 +194,7 @@ public class CoffeeMakerTests {
         coffeeMaker.addRecipe(recipe2);
         coffeeMaker.addRecipe(recipe3);
         coffeeMaker.addRecipe(recipe4);
-        coffeeMaker.addInventory("100", "100", "100", "100");
+        coffeeMaker.addInventory("100", "100", "0", "100");
         int expectedChange = 3;
 
         assertEquals(expectedChange, coffeeMaker.makeCoffee(2, 10));
