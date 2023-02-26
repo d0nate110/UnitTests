@@ -131,7 +131,7 @@ public class RecipeTest {
     }
 
     @Test
-    public void testNegativeValues() {
+    public void testNegativeSugar() {
 
         Throwable exception =
                 assertThrows(
@@ -153,7 +153,7 @@ public class RecipeTest {
 
     }
     @Test
-    public void testTestNormalPrice() throws RecipeException {
+    public void testNormalPrice() throws RecipeException {
         rec1.setPrice("20");
         assertTrue(rec1.getPrice() >= 0);
     }
