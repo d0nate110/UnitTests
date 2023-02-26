@@ -186,11 +186,14 @@ public class RecipeBookTest {
     });
     System.out.println(exception);
   }
+  
+  //Gives 100% line coverage as specified in the report
 
   // ********************************************************************
   // ********************* SECOND TASK **********************************
   // ********************************************************************
 
+  //Adding a valid recipe into the recipe book
   //First Condition: true/false - Second Condition: false - Third Condition: true - Forth Condition: true/false - Fifth Condition: true
   @Test
   public void addRecipeFirstBranch(){
@@ -199,6 +202,7 @@ public class RecipeBookTest {
     System.out.println(Arrays.toString(recipeBook.getRecipes()));
   }
 
+  //Adding the same recipe twice
   //First Condition: true/false - Second Condition: true - Third Condition: false
   @Test
   public void addRecipeSecondBranch(){
@@ -208,6 +212,7 @@ public class RecipeBookTest {
     System.out.println(Arrays.toString(recipeBook.getRecipes()));
   }
 
+  //Adding more than four recipes into the recipebook (which allows a max of 5 recipes)
   //First Condition: true/false - Second Condition: false - Third Condition: true - Forth Condition: true/false - Fifth Condition: false
   @Test
   public void addRecipeThirdBranch(){
@@ -221,6 +226,8 @@ public class RecipeBookTest {
     assertFalse(recipeBook.addRecipe(fifthRecipe));
     System.out.println(Arrays.toString(recipeBook.getRecipes()));
   }
+  
+  //Gives 100% branch coverage as we are covering every possible path/branch in the diagram
 
 }
 
